@@ -1,4 +1,5 @@
-replicaCount: 3
+replicaCount: 1
+appName: nginx-deploy
 image:
   repository: nginx
   tag: 1.23.1

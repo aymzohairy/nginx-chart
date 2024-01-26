@@ -2,14 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: nginx-deploy
-  name: nginx-deploy
+    app: {{ .Values.appName }}
+  name: {{ .Values.appName }}
   namespace: default
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: nginx-deploy
+      app: {{ .Values.appName }}
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -18,10 +18,10 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx-deploy
+        app: {{ .Values.appName }}
     spec:
       containers:
-      - image: nginx
+      - image: {{ .Values.image.repository }}: {{.Values.image.tag}}
         imagePullPolicy: Always
         name: nginx
       restartPolicy: Always
