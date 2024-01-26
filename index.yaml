@@ -1,0 +1,15 @@
+- name: nginx-chart
+  description: A Helm chart for deploying Nginx
+  version: 0.1.0
+  appVersion: 1.23.1
+  type: application
+  keywords:
+    - nginx
+    - web-server
+  maintainers:
+    - name: The Helm Team
+      email: helm@example.com
+  sources:
+    - https://github.com/helm/charts
+  icon: https://helm.sh/img/helm.svg
+  kubeVersion: ">=1.16.0-0"
